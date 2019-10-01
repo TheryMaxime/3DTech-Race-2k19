@@ -12,13 +12,16 @@ public class KinectController : MonoBehaviour
     private KinectManager m_Manager; //Instance of the KinectManager
     private Dictionary<KinectWrapper.NuiSkeletonPositionIndex, Vector3> m_Joints; //Dictionnary of tracked joints
     private float m_angleHands;
+    private CharacterMovement characterMovement;
 
     // Start is called before the first frame update
     void Start()
     {
+        this.m_Joints = new Dictionary<KinectWrapper.NuiSkeletonPositionIndex, Vector3>();
         this.InstantiateJoints();
         //TODO
         //Get the current character controller
+        this.characterMovement = gameObject.GetComponent<CharacterMovement>();
     }
 
     private void InstantiateJoints()
@@ -54,10 +57,12 @@ public class KinectController : MonoBehaviour
 
     private void GetTrackedJoints()
     {
+        Dictionary < KinectWrapper.NuiSkeletonPositionIndex, Vector3 > _copy = new Dictionary<KinectWrapper.NuiSkeletonPositionIndex, Vector3>();
         foreach (KinectWrapper.NuiSkeletonPositionIndex joint in this.m_Joints.Keys)
         {
-            this.m_Joints.Add(joint, this.m_Manager.GetJointPosition(this.m_PlayerId, (int)joint));
+            _copy.Add(joint, this.m_Manager.GetJointPosition(this.m_PlayerId, (int)joint));
         }
+        this.m_Joints = _copy;
     }
 
     private void ComputePosition()
@@ -77,5 +82,6 @@ public class KinectController : MonoBehaviour
     private void SendInstructions()
     {
         //TODO
+        this.characterMovement.Move(this.m_angleHands);
     }
 }
