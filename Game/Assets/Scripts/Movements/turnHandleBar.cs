@@ -17,13 +17,13 @@ public class turnHandleBar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Vector3 turnRight = new Vector3(200f, 0, 0);
+            Vector3 turnRight = new Vector3(1f, 0, 0);
             bikeRigidBody.transform.position += turnRight;
         }
 
         else if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            Vector3 turnRight = new Vector3(-200f, 0, 0);
+            Vector3 turnRight = new Vector3(-1f, 0, 0);
             bikeRigidBody.transform.position += turnRight;
         }
     }

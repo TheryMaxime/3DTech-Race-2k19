@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 494}
   m_MaxSize: {x: 18008, y: 14044}
   vertical: 0
-  controlID: 74
+  controlID: 141
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -327,7 +327,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 26e9ffff70f5ffff22f6ffff5ef6ffff78fbffff12300000
+      m_ExpandedIDs: 78fbffff12300000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -426,19 +426,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Movements
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Movements
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Documents\IMT Lille Douai\5A\3DTech\Projet\FINAL\Kinect-app\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 062e0000
-    m_LastClickedID: 11782
+    m_SelectedIDs: ac2d0000
+    m_LastClickedID: 11692
     m_ExpandedIDs: 00000000bc2c00008e2d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -640,9 +640,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.0506474, y: 149.88281, z: -1.3081377}
+    m_Target: {x: 3.9162889, y: -0.57184297, z: 22.685038}
     speed: 2
-    m_Value: {x: -1.0506474, y: 149.88281, z: -1.3081377}
+    m_Value: {x: 3.9162889, y: -0.57184297, z: 22.685038}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -671,17 +671,17 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Target: {x: -0.12345387, y: 0.6506499, z: -0.10834221, w: -0.7414032}
     speed: 2
-    m_Value: {x: 0.7071068, y: 0.000014324894, z: 0, w: 0.7071068}
+    m_Value: {x: -0.12329104, y: 0.65176034, z: -0.10852711, w: -0.74042535}
   m_Size:
-    m_Target: 25.122278
+    m_Target: 0.8749997
     speed: 2
-    m_Value: 24.040457
+    m_Value: 1.1749997
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
