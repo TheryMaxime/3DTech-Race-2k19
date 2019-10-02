@@ -76,7 +76,10 @@ public class KinectController : MonoBehaviour
         Vector2 v_jointRight = this.m_Joints[jointRight];
         Vector2 v_jointsLine = v_jointRight - v_jointLeft;
         Vector2 v_horizontalLine = new Vector2(v_jointsLine.x, 0);
-        return Vector2.Angle(v_jointsLine, v_horizontalLine);
+        if (this.m_Joints[jointLeft].y < this.m_Joints[jointRight].y)
+            return -Vector2.Angle(v_jointsLine, v_horizontalLine);
+        else
+            return Vector2.Angle(v_jointsLine, v_horizontalLine);
     }
 
     private void SendInstructions()
