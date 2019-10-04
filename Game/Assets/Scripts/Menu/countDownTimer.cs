@@ -10,18 +10,15 @@ public class countDownTimer : MonoBehaviour
     float currentTime = 0f;
     float startingTime = 5f;
 
-    public Image trafficLight;
-
     [SerializeField] Text countDownText;
 
     void Start()
     {
         currentTime = startingTime;
-        trafficLight.sprite = Resources.Load<Sprite>("Sprites/red");
     }
 
     void Update()
-    {
+    { 
         currentTime -= 1f * Time.deltaTime;
         if(currentTime > 1f)
         {
