@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1557,7 +1557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CharacterId: 1
   m_TurnSpeed: 0.05
-  m_speed: 0.5
+  m_speed: 1
   m_camera: {fileID: 963194227}
 --- !u!114 &133354672
 MonoBehaviour:
@@ -12300,7 +12300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322f21aa174d19149af03be39cd3837b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadsPrefabs: []
+  roadsPrefabsList: []
+  roadsList: []
 --- !u!4 &1463884765
 Transform:
   m_ObjectHideFlags: 0
@@ -16111,11 +16112,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1289989270}
-    - target: {fileID: 1549765935556652322, guid: 8f38b5b58be2a954b8bed0c3cea68bda,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3808775396679466850, guid: 8f38b5b58be2a954b8bed0c3cea68bda,
         type: 3}
       propertyPath: m_Mesh
@@ -16126,11 +16122,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1729706742}
-    - target: {fileID: 149779243679328055, guid: 8f38b5b58be2a954b8bed0c3cea68bda,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1486867588207194784, guid: 8f38b5b58be2a954b8bed0c3cea68bda,
         type: 3}
       propertyPath: m_Mesh
@@ -16141,5 +16132,15 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 682350509}
+    - target: {fileID: 1549765935556652322, guid: 8f38b5b58be2a954b8bed0c3cea68bda,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 149779243679328055, guid: 8f38b5b58be2a954b8bed0c3cea68bda,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f38b5b58be2a954b8bed0c3cea68bda, type: 3}
