@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LauchingRace.unity
     guid: 76fd8030d31cc804eb18223b98a25cff
   - enabled: 1
-    path: Assets/Scenes/SampleSceneAntoine.unity
+    path: Assets/Scenes/infiniteRoadScene.unity
     guid: e2688aae9fc5fe54a965974fbef0d4ac
   m_configObjects: {}

@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class playGameScene : MonoBehaviour
+public class selectLevelScene : MonoBehaviour
 {
-    public void playGame()
+    public void selectLevel()
     {
-        SceneManager.LoadScene("LaunchRace", LoadSceneMode.Single);
+        SceneManager.LoadScene("selectLevel", LoadSceneMode.Single);
     }
 }
