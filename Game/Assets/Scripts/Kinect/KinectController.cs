@@ -7,11 +7,13 @@ public class KinectController : MonoBehaviour
     public int m_CharacterId; //ID of the current character
     public KinectWrapper.NuiSkeletonPositionIndex m_HandRight = KinectWrapper.NuiSkeletonPositionIndex.HandRight;
     public KinectWrapper.NuiSkeletonPositionIndex m_HandLeft = KinectWrapper.NuiSkeletonPositionIndex.HandLeft;
+    public KinectWrapper.NuiSkeletonPositionIndex m_Head = KinectWrapper.NuiSkeletonPositionIndex.Head;
 
     private uint m_PlayerId; //ID of the current player
     private KinectManager m_Manager; //Instance of the KinectManager
     private Dictionary<KinectWrapper.NuiSkeletonPositionIndex, Vector3> m_Joints; //Dictionnary of tracked joints
     private float m_angleHands;
+    private float m_handsZ;
     private CharacterMovement characterMovement;
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class KinectController : MonoBehaviour
         Vector3 nullVector = new Vector3(0, 0, 0);
         this.m_Joints.Add(this.m_HandRight, nullVector);
         this.m_Joints.Add(this.m_HandLeft, nullVector);
+        this.m_Joints.Add(this.m_Head, nullVector);
     }
 
     // Update is called once per frame
@@ -68,6 +71,7 @@ public class KinectController : MonoBehaviour
     private void ComputePosition()
     {
         this.m_angleHands = this.ComputeAngle(this.m_HandLeft, this.m_HandRight);
+        this.m_handsZ = this.ComputeZPosition(this.m_Head, this.m_HandRight);
     }
 
     private float ComputeAngle(KinectWrapper.NuiSkeletonPositionIndex jointLeft, KinectWrapper.NuiSkeletonPositionIndex jointRight)
@@ -82,9 +86,17 @@ public class KinectController : MonoBehaviour
             return Vector2.Angle(v_jointsLine, v_horizontalLine);
     }
 
+    private float ComputeZPosition(KinectWrapper.NuiSkeletonPositionIndex avgPosition, KinectWrapper.NuiSkeletonPositionIndex position)
+    {
+        float avgPositionZ = this.m_Joints[avgPosition].z;
+        float positionZ = this.m_Joints[position].z;
+        return avgPositionZ - positionZ;
+    }
+
     private void SendInstructions()
     {
         //TODO
         this.characterMovement.Move(this.m_angleHands);
+        this.characterMovement.ControlSpeed(this.m_handsZ);
     }
 }

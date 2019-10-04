@@ -12,6 +12,7 @@ public class CharacterMovement : MonoBehaviour
     //private Rigidbody m_Rigidbody;
     private CharacterController m_Rigidbody;
     private Transform m_transform;
+    private float m_speedController = 0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,16 +32,14 @@ public class CharacterMovement : MonoBehaviour
     {
         //this.m_Rigidbody.MovePosition(new Vector3(0, 0, this.m_speed));
         //this.m_Rigidbody.velocity = (new Vector3(0, 0, this.m_speed));
-        Vector3 movement = this.m_transform.forward * this.m_speed;
+        Vector3 gravity = new Vector3(0f, 0f, 0f);
+        if (!this.m_Rigidbody.isGrounded)
+            gravity = new Vector3(0f, -1f, 0f);
+        Vector3 movement = this.m_transform.forward * this.m_speed /** this.m_speedController*/ + gravity;
         //this.m_Rigidbody.MovePosition(this.m_Rigidbody.position + movement);
         this.m_Rigidbody.Move(movement);
     }
-
-    /*private void Turn(float angle)
-    {
-
-    }*/
-
+    
     public void Move(float angle)
     {
         if (angle > 45)
@@ -60,5 +59,10 @@ public class CharacterMovement : MonoBehaviour
         //this.m_Rigidbody.attachedRigidbody.MoveRotation(this.m_camera.transform.rotation * turnRotation);
         this.transform.Rotate(0f, angle * this.m_TurnSpeed, 0f);
         //this.m_camera.transform.rotation = Quaternion.Euler(0f, 0f, -angle);
+    }
+
+    public void ControlSpeed(float speed)
+    {
+        this.m_speedController = speed;
     }
 }
