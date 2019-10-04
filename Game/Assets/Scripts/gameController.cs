@@ -27,6 +27,7 @@ public class gameController : MonoBehaviour
     void Start()
     {
         character = GameObject.FindGameObjectWithTag("Player");
+
         float z = 0f;
         roadsList = new List<GameObject>();
 

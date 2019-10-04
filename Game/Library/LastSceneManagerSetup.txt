@@ -1,5 +1,17 @@
 sceneSetups:
-- path: Assets/Scenes/SampleSceneAntoine.unity
+- path: Assets/Scenes/Menu.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
+- path: Assets/Scenes/LaunchRace.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/RulesScene.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/SampleSceneAntoine.unity
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0
