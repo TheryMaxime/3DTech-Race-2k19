@@ -35,17 +35,17 @@ public class CharacterMovement : MonoBehaviour
         Vector3 gravity = new Vector3(0f, 0f, 0f);
         if (!this.m_Rigidbody.isGrounded)
             gravity = new Vector3(0f, -1f, 0f);
-        Vector3 movement = this.m_transform.forward * this.m_speed /** this.m_speedController*/ + gravity;
+        Vector3 movement = this.m_transform.forward * this.m_speed * this.m_speedController + gravity;
         //this.m_Rigidbody.MovePosition(this.m_Rigidbody.position + movement);
         this.m_Rigidbody.Move(movement);
     }
     
     public void Move(float angle)
     {
-        if (angle > 45)
-            angle = 45;
-        else if (angle < -45)
-            angle = -45;
+        if (angle > 60)
+            angle = 60;
+        else if (angle < -60)
+            angle = -60;
         //Vector3 movement = new Vector3(angle*this.m_TurnSpeed, 0, 0);
         //this.m_Rigidbody.MovePosition(this.m_Rigidbody.position + movement);
         //this.m_Rigidbody.velocity = this.m_Rigidbody.position + movement;
