@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 494}
   m_MaxSize: {x: 18008, y: 14044}
   vertical: 0
-  controlID: 292
+  controlID: 9524
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 422}
   m_MaxSize: {x: 4002, y: 8022}
   vertical: 1
-  controlID: 181
+  controlID: 9504
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 494}
   m_MaxSize: {x: 10004, y: 14044}
   vertical: 1
-  controlID: 268
+  controlID: 9525
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -559,9 +559,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 
+      m_SelectedIDs: 78fbffff
+      m_LastClickedID: -1160
+      m_ExpandedIDs: 74fbffff76fbffff78fbffffb83400001a350000aa35000006360000103600009c390000f8390000023a00001a3a0000983c0000a23c0000d23e000098420000d84400001847000058490000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -624,19 +624,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 46
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 46
   m_LastProjectPath: D:\Documents\IMT Lille Douai\5A\3DTech\Projet\FINAL\Kinect-app\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 8}
-    m_SelectedIDs: 4e300000
-    m_LastClickedID: 12366
+    m_SelectedIDs: 902d0000
+    m_LastClickedID: 11664
     m_ExpandedIDs: 00000000902d0000542e0000622f0000822f00003e310000743300000a3500000c35000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
