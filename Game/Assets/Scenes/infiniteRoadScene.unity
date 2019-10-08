@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CharacterId: 1
   m_TurnSpeed: 0.01
-  m_speed: 0.09
+  m_speed: 0.3
   m_camera: {fileID: 1654671090}
 --- !u!114 &396590950
 MonoBehaviour:
@@ -391,6 +391,7 @@ MonoBehaviour:
   m_CharacterId: 1
   m_HandRight: 11
   m_HandLeft: 7
+  m_Head: 3
 --- !u!4 &396590951
 Transform:
   m_ObjectHideFlags: 0

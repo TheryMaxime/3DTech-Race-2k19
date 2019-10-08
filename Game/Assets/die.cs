@@ -10,4 +10,11 @@ public class die : MonoBehaviour
             gameController.instance.died();
 
     }
+
+
+    /*public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        print("sale");
+        gameController.instance.died();
+    }*/
 }
