@@ -9,6 +9,7 @@ public class increaseScore : MonoBehaviour
         if (other.GetComponent<CharacterController>() != null)
         {
             gameController.instance.scored();
+            Destroy(this);
         }
     }
 }
