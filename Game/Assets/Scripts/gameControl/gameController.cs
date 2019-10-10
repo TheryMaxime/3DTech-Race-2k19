@@ -29,6 +29,10 @@ public class gameController : MonoBehaviour
     public Text scoreText;
     public Text gameOverText;
 
+    public AudioSource audioSource;
+    public AudioClip audioDie;
+
+
     void Awake()
     {
         if (instance == null) //singleton pattern
@@ -75,7 +79,11 @@ public class gameController : MonoBehaviour
         {
             countDownText.text = currentTime.ToString("0");
         }
-        else countDownText.text = "Go !";
+        else
+        {
+            countDownText.text = "Go !";
+            character.GetComponent<CharacterMovement>().EnabledMovement();
+        }
 
         if (currentTime < -1f)
         {
@@ -133,5 +141,9 @@ public class gameController : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         gameOver = true;
         backMenu.gameObject.SetActive(true);
+        character.GetComponent<CharacterMovement>().SetOver();
+        this.audioSource.Stop();
+        this.audioSource.PlayOneShot(this.audioDie);
     }
+
 }

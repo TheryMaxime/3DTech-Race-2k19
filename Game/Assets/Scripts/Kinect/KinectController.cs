@@ -21,13 +21,12 @@ public class KinectController : MonoBehaviour
     {
         this.m_Joints = new Dictionary<KinectWrapper.NuiSkeletonPositionIndex, Vector3>();
         this.InstantiateJoints();
-        //TODO
-        //Get the current character controller
         this.characterMovement = gameObject.GetComponent<CharacterMovement>();
     }
 
     private void InstantiateJoints()
     {
+        //On rempli au préalable le dictionnary de 'joint' pour pouvoir loop dessus plus tard
         Vector3 nullVector = new Vector3(0, 0, 0);
         this.m_Joints.Add(this.m_HandRight, nullVector);
         this.m_Joints.Add(this.m_HandLeft, nullVector);
@@ -46,13 +45,19 @@ public class KinectController : MonoBehaviour
                 {
                     this.m_PlayerId = this.m_Manager.GetPlayer1ID();
                 }
+                /*
+                //En cas d'implémentation d'un mode deux joueurs
                 else
                 {
                     this.m_PlayerId = this.m_Manager.GetPlayer2ID();
                 }
+                */
 
+                //Récupère les positions des 'joints' à cibler
                 this.GetTrackedJoints();
+                //Effectue les calculs nécéssaire au mouvement du personnage
                 this.ComputePosition();
+                //Envoie les instructions de déplacement au character
                 this.SendInstructions();
             }
         }
@@ -70,7 +75,9 @@ public class KinectController : MonoBehaviour
 
     private void ComputePosition()
     {
+        //On cherche à avoir un angle entre la ligne des mains et une ligne horizontal
         this.m_angleHands = this.ComputeAngle(this.m_HandLeft, this.m_HandRight);
+        //On cherche la distance 'Z' entre la main droite et la tête du joueur
         this.m_handsZ = this.ComputeZPosition(this.m_Head, this.m_HandRight);
     }
 
@@ -80,6 +87,7 @@ public class KinectController : MonoBehaviour
         Vector2 v_jointRight = this.m_Joints[jointRight];
         Vector2 v_jointsLine = v_jointRight - v_jointLeft;
         Vector2 v_horizontalLine = new Vector2(v_jointsLine.x, 0);
+        //Attention Angle() retourne toujours une valeur positive
         if (this.m_Joints[jointLeft].y < this.m_Joints[jointRight].y)
             return -Vector2.Angle(v_jointsLine, v_horizontalLine);
         else
@@ -95,7 +103,6 @@ public class KinectController : MonoBehaviour
 
     private void SendInstructions()
     {
-        //TODO
         this.characterMovement.Move(this.m_angleHands);
         this.characterMovement.ControlSpeed(this.m_handsZ);
     }

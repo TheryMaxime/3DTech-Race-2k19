@@ -7,6 +7,6 @@ public class playChronoMode : MonoBehaviour
 {
     public void playChronoModeScene()
     {
-        SceneManager.LoadScene("Demo", LoadSceneMode.Single);
+        SceneManager.LoadScene("Chrono", LoadSceneMode.Single);
     }
 }
